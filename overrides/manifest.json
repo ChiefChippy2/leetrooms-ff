@@ -27,11 +27,6 @@
               "js": ["content.js"]
           },
           {
-            "matches": ["https://leetcode.com/problems/*"],
-            "js": ["overrideFetch.js"],
-            "run_at": "document_start"
-          },
-          {
               "matches": ["https://leetcode.com/*"],
               "exclude_matches": ["https://leetcode.com/problems/*"],
               "css": ["panel.css"],
