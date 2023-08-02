@@ -35,3 +35,13 @@ function snipeCookie(details) {
 browser.webRequest.onHeadersReceived.addListener(snipeCookie, {
   urls: ['https://api.leetrooms.com/auth/*?*'],
 }, ['responseHeaders']);
+
+
+browser.runtime.onSuspend.addListener(cleanup)
+
+function cleanup() {
+  try{
+    browser.webRequest.onHeadersReceived.removeListener(snipeCookie)
+    browser.webRequest.onBeforeSendHeaders.removeListener(addCookie)
+  } catch {}
+}
