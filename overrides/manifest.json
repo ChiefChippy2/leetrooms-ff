@@ -4,8 +4,8 @@
       "version": "0.1.11",
       "description": "Multiplayer rooms for LeetCode.",
       "homepage_url": "https://leetrooms.com",
-      "permissions": ["activeTab", "storage", "webRequest"],
-      "host_permissions": ["https://leetcode.com/problems/*"],
+      "permissions": ["activeTab", "storage", "webRequest", "webRequestBlocking"],
+      "host_permissions": ["https://leetcode.com/problems/*", "https://*.leetrooms.com/*", "https://leetrooms.com/*"],
       "action": {
           "default_icon": {
               "16": "icons/16.png",
@@ -27,6 +27,11 @@
               "js": ["content.js"]
           },
           {
+            "matches": ["https://leetcode.com/problems/*"],
+            "js": ["overrideFetch.js"],
+            "run_at": "document_start"
+          },
+          {
               "matches": ["https://leetcode.com/*"],
               "exclude_matches": ["https://leetcode.com/problems/*"],
               "css": ["panel.css"],
@@ -34,7 +39,7 @@
           }
       ],
       "background": {
-          "scripts": ["background.js"]
+          "scripts": ["background.js", "extra.js"]
       }
   }
   
