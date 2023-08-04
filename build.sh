@@ -2,6 +2,7 @@ wget --output-document "original.zip" 'https://clients2.google.com/service/updat
 yes|unzip original.zip -d 'files/'
 sed -i 's/chrome/browser/g' files/*.*
 yes|cp -f overrides/* files/
+./additional-tweaks/*.sh
 # remove prev build ig
 mkdir build
 rm build/leetrooms.zip
