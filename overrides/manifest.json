@@ -37,6 +37,10 @@
               "exclude_matches": ["https://leetcode.com/problems/*"],
               "css": ["panel.css"],
               "js": ["panel.js"]
+          },
+          {
+              "matches": ["https://leetrooms.com/sign-in-success"],
+              "js": ["friendlyWarning.js"]
           }
       ],
       "background": {

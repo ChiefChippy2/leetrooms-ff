@@ -17,7 +17,6 @@ function addDynRule(token) {
 
 function addCookie(details) {
   const currentHeaders = details.requestHeaders;
-  console.log(authToken);
   currentHeaders.push({'name': 'X-Modified-By', 'value': 'Leetrooms-Firefox'});
   if (!currentHeaders.find(x=>x.name === 'Cookie')) currentHeaders.push({'name': 'Cookie', 'value': authToken || ''});
   else currentHeaders.find(x=>x.name === 'Cookie').value = `${authToken};`
