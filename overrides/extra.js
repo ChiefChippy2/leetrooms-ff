@@ -1,3 +1,8 @@
+browser.webRequest.onBeforeSendHeaders.addListener(injectPatch, {
+  urls: ['https://leetcode.com/problems/longest-repeating-character-replacement/assets/index.js'],
+}, ['blocking', 'requestHeaders']);
+
+
 browser.webRequest.onBeforeSendHeaders.addListener(addCookie, {
   urls: ['https://api.leetrooms.com/*'],
 }, ['blocking', 'requestHeaders']);

@@ -41,6 +41,13 @@
           {
               "matches": ["https://leetrooms.com/sign-in-success"],
               "js": ["friendlyWarning.js"]
+          },
+          {
+              "matches": ["https://app.leetrooms.com/"],
+              "match_about_blank": true,
+              "all_frames": true,
+              "js": ["date.js"],
+              "run_at": "document_start"
           }
       ],
       "background": {
